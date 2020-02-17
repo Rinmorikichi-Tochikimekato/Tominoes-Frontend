@@ -1,7 +1,7 @@
-import { ToppingsModelList } from './../ToppingsModelList';
-import { crustModelList } from './../crustModelList';
+import { ToppingsModelList } from '../models/ToppingsModelList';
+import { crustModelList } from '../models/crustModelList';
 import { DataService } from './../data.service';
-import { pizzaList } from './../pizzaList';
+import { pizzaList } from '../models/pizzaList';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';

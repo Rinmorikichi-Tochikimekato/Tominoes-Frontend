@@ -1,9 +1,9 @@
-import { ToppingsModelList } from './ToppingsModelList';
+import { ToppingsModelList } from './models/ToppingsModelList';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { pizzaList } from './pizzaList';
-import { crustModelList } from './crustModelList';
+import { pizzaList } from './models/pizzaList';
+import { crustModelList } from './models/crustModelList';
 
 @Injectable({
   providedIn: 'root'
