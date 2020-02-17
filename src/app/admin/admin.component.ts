@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { Observable } from 'rxjs';
+import { Price } from '../models/Price';
+import { AllOrders } from '../models/AllOrders';
+import { Order } from '../models/Order';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  orderList : Order[];
+
+  constructor(public adminService : AdminService) { }
 
   ngOnInit() {
+      this.adminService.getAllOrders().subscribe((data)=> this.orderList = data.list);
+      // console.log(this.orderList);
   }
 
 }
