@@ -12,23 +12,23 @@ import {MatMenuModule} from '@angular/material/menu';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public pizzaCat:pizzaList;
-  public crustList:crustModelList;
-  public toppingsList : ToppingsModelList;
+  public pizzaCat;
+  public crustList;
+  public toppingsList;
   constructor(private _dataService : DataService) {
    }
 
   ngOnInit() {
     this. _dataService.getCategoryData()
-     .subscribe(data => this.pizzaCat = data);
+     .subscribe(data => this.pizzaCat = data.categoryList);
   
   
       this._dataService.getCrustData()
-    .subscribe(data2 => this.crustList = data2);
+    .subscribe(data2 => this.crustList = data2.list);
     console.log(this.crustList);
 
       this._dataService.getToppingsData()
-    .subscribe(data3 => this.toppingsList = data3);
+    .subscribe(data3 => this.toppingsList = data3.list);
   }
 
 

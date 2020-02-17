@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
 
+  private _orderUrl = "http://localhost:8082/order/getAllOrders";
+
+
   constructor( public http : HttpClient) { }
 
   getAllOrders() : Observable<AllOrders>{
 
-    return (this.http.get<AllOrders>("http://localhost:8082/order/getAllOrders"));
+    return (this.http.get<AllOrders>(this._orderUrl));
 
   }
+
+  
 
   
 

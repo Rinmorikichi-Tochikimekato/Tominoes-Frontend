@@ -1,35 +1,20 @@
-
-
-
-<select > 
-    <option *ngFor="let crust of crustList.list">{{crust.name | json}}</option>
-</select>
-
-<br>
-<br>
 <select>
-    <option *ngFor = "let pizza of pizzaCat.categoryList">{{pizza.name | json}}</option>
+    <option *ngFor="let crust of crustList">{{crust.name | json}}</option>
 </select>
 
 <br>
-<br>
+
+
 
 <select>
-    <option *ngFor = "let toppings of toppingsList.list">{{toppings.name | json}}</option>
+    <option *ngFor="let pizza of pizzaCat">{{pizza.name | json}}</option>
 </select>
 
-
+<br>
+<select>
+    <option *ngFor="let toppings of toppingsList">{{toppings.name | json}}</option>
+</select>
 <!--
-
-    <select>
-    <option *ngFor = "let pizza of pizzaCat.categoryList">{{pizza.name | json}}</option>
-</select>
-
-
-<select>
-    <option *ngFor = "let toppings of toppingsList.toppingsList">{{toppings | json}}</option>
-</select>
-  
 
 <select>
     <option *ngFor = "let pizza of pizzaCat.categoryList">{{pizza.name | json}}</option>
