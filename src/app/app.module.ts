@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatToolbarModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material'
+import {MatToolbarModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
+import { AdminComponent } from './admin/admin.component'
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    AdminComponent
     
   ],
   imports: [

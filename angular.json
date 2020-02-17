@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "Tominoes"
+  "defaultProject": "Tominoes",
+  "cli": {
+    "analytics": false
+  }
 }
