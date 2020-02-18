@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-admin-topping',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminToppingComponent implements OnInit {
 
-  constructor() { }
+  toppingList;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+  
+    this.dataService.getToppingsData().subscribe((data)=>this.toppingList=data.list);
+
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/models/Order';
-import { AdminService } from 'src/app/admin.service';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-admin-order',
@@ -11,11 +11,11 @@ export class AdminOrderComponent implements OnInit {
 
   orderList : Order[];
 
-  constructor(private adminService:AdminService) { }
+  constructor(private dataService:DataService) { }
 
   ngOnInit() {
 
-    this.adminService.getAllOrders().subscribe((data)=> this.orderList = data.list);
+    this.dataService.getOrdersData().subscribe((data)=> this.orderList = data.list);
   }
 
 }

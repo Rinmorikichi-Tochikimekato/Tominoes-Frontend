@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-admin-category',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCategoryComponent implements OnInit {
 
-  constructor() { }
+  categoryList;
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit() {
+  
+    this.dataService.getCategoryData().subscribe((data)=> this.categoryList = data.categoryList);
+  
   }
+
+
 
 }

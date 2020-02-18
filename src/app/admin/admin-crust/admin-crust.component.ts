@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-admin-crust',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCrustComponent implements OnInit {
 
-  constructor() { }
+  crustList;
+
+  constructor(private dataService : DataService) { }
 
   ngOnInit() {
+      this.dataService.getCrustData().subscribe((data)=>this.crustList=data.list);
   }
 
 }
