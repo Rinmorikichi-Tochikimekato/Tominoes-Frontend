@@ -1,3 +1,5 @@
+import { pizzaCategory } from './../models/pizzaCategory';
+import { FormsModule } from '@angular/forms';
 import { ToppingsModelList } from '../models/ToppingsModelList';
 import { crustModelList } from '../models/crustModelList';
 import { DataService } from './../data.service';
@@ -5,6 +7,7 @@ import { pizzaList } from '../models/pizzaList';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
+
 
 @Component({
   selector: 'app-home',
@@ -15,6 +18,16 @@ export class HomeComponent implements OnInit {
   public pizzaCat;
   public crustList;
   public toppingsList;
+ 
+
+  public selectedValue={pizza:["Select pizza"]};
+  // public selectedValue;
+  public pizzaName;
+ public pizza=[];
+ public cnt=0;
+  
+  
+  
   constructor(private _dataService : DataService) {
    }
 
@@ -29,9 +42,13 @@ export class HomeComponent implements OnInit {
 
       this._dataService.getToppingsData()
     .subscribe(data3 => this.toppingsList = data3.list);
+     console.log(this.pizzaCat);
+  
   }
 
-
+ onSelect(){
+ 
+ }
 
 
 }

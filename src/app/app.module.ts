@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatToolbarModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 import { AdminComponent } from './admin/admin.component'
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     AdminComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { AdminComponent } from './admin/admin.component'
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatProgressSpinnerModule 
+    MatProgressSpinnerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

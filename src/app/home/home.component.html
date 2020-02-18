@@ -1,22 +1,69 @@
-<select>
-    <option *ngFor="let crust of crustList">{{crust.name | json}}</option>
+
+<div>
+   
+    <br>
+    <br>
+
+
+    <Label for="PIZZA-CAT">Choose a Pizza Category</Label>
+    <select name="PIZZA-CAT" [(ngModel)]="selectedValue"  (change)="onSelect()">
+        <option  *ngFor="let pizza of pizzaCat" [ngValue]="pizza" >{{pizza.name | json}} </option>
+    </select>
+    
+    <br>
+    <br>
+
+    <div>
+        <Label for="PIZZA-OPTION">Choose a Pizza </Label>
+    <select name="PIZZA-OPTION"  >
+        <option  *ngFor="let j of selectedValue.pizza"  [ngValue]="j" >{{j}} </option>
+    </select>
+
+    </div>
+    
+    <br>
+    <br>
+    
+    <label for="TOPPINGS">Choose toppings</label>
+    <div name="TOPPINGS" class="checkbox"  *ngFor="let toppings of toppingsList">
+    <label><input type="checkbox" value="toppings.name">{{toppings.name}}</label>
+  </div>
+
+  <br>
+  <br>
+
+  <Label for="CRUST "> Choose a Crust :</Label>
+  <select name="CRUST">
+      <option  *ngFor="let crust of crustList">{{crust.name | json}} </option>
+  </select>
+  <br>
+  <br>
+    
+  <button class="btn btn-primary">Add to cart</button>
+  
+</div>
+
+
+
+
+  
+
+
+<!--
+
+    <select>
+    <option *ngFor="let toppings of toppingsList">{{toppings.name | json}}</option>
 </select>
 
-<br>
 
-
-
-<select>
-    <option *ngFor="let pizza of pizzaCat">{{pizza.name | json}}</option>
-</select>
-
-<br>
 <select>
     <option *ngFor="let toppings of toppingsList">{{toppings.name | json}}</option>
 </select>
-<!--
 
-<select>
+
+
+
+    <select>
     <option *ngFor = "let pizza of pizzaCat.categoryList">{{pizza.name | json}}</option>
 </select>
 
