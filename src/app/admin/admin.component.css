@@ -1,8 +1,7 @@
-#adminContainer{
+#adminContainer {
     height: 100%;
 }
 
-mat-drawer-content{
+mat-drawer-content {
     padding: 20px;
-    
 }
