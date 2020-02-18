@@ -1,4 +1,30 @@
-Order list
-<ul *ngFor="let order of orderList">
-    {{order|json}}
-</ul>
+
+<mat-drawer-container id="adminContainer">
+    <mat-drawer mode="side" opened>
+       <mat-toolbar style="height: 100%;">
+        <mat-toolbar-row> <button mat-button routerLink="order">Orders</button></mat-toolbar-row>
+        <mat-toolbar-row>   <button mat-button routerLink="category"> Pizza Categories</button></mat-toolbar-row>   
+        <mat-toolbar-row> <button mat-button routerLink="topping">Toppings</button></mat-toolbar-row>
+        <mat-toolbar-row> <button mat-button routerLink="crust">Crust</button></mat-toolbar-row>
+       </mat-toolbar>
+            
+      
+
+      
+    </mat-drawer>
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+
+
+
+
+
+
+
+
+

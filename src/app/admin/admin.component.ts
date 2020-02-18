@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Price } from '../models/Price';
 import { AllOrders } from '../models/AllOrders';
 import { Order } from '../models/Order';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -12,13 +13,14 @@ import { Order } from '../models/Order';
 })
 export class AdminComponent implements OnInit {
 
-  orderList : Order[];
 
-  constructor(public adminService : AdminService) { }
+  content;
+
+  constructor(private adminService: AdminService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-      this.adminService.getAllOrders().subscribe((data)=> this.orderList = data.list);
-      // console.log(this.orderList);
+
+    // console.log(this.orderList);
   }
 
 }
