@@ -9,6 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class AdminToppingComponent implements OnInit {
 
   toppingList;
+  displayedColumns = ['name','price'];
 
   constructor(private dataService: DataService) { }
 

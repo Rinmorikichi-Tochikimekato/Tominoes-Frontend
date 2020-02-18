@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class AdminCrustComponent implements OnInit {
 
   crustList;
-
+  displayedColumns = ['name','price'];
   constructor(private dataService : DataService) { }
 
   ngOnInit() {

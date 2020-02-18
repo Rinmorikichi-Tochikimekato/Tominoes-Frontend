@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class AdminCategoryComponent implements OnInit {
 
   categoryList;
-
+  displayedColumns = ['name','pizza','price'];
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
