@@ -30,7 +30,7 @@
         </mat-card-title>
         <form>
             <mat-form-field>
-                <mat-label>Crust name</mat-label>
+                <mat-label>Category name</mat-label>
                 <input matInput type="text" placeholder="Ex. Cheese Burst" [(ngModel)]="cname" name="cname">
             </mat-form-field>
             <br>
@@ -40,7 +40,7 @@
                     <mat-label>Pizza Name</mat-label>
                     <input matInput type="text" placeholder="Ex. Margarita" name={{pizza}} #matInput>
 
-                    <button mat-mini-fab matSuffix style="height:15px; width:15px; position: relative; top: 10px" color="warn" (click)="removePizza($event)" value="{{pizza}}" *ngIf="i==pizzas.length-1 && i!=0"></button>
+                    <button mat-mini-fab matSuffix style="height:10px; width:10px; position: relative; top: 10px" color="warn" (click)="removePizza($event)" value="{{pizza}}" *ngIf="i==pizzas.length-1 && i!=0"></button>
 
 
                 </mat-form-field>
@@ -49,13 +49,13 @@
             <button mat-mini-fab (click)="addMorePizza()">
               <mat-icon>add</mat-icon>
             </button> <br>
-            <br>
+
 
             <mat-form-field>
                 <mat-label>Price</mat-label>
                 <input matInput type="number" placeholder="Ex. 100" [(ngModel)]="cprice" name="cprice">
             </mat-form-field>
-            <button mat-raised-button color="primary" (click)="addCategory()"> Add Crust</button>
+            <button mat-raised-button color="primary" (click)="addCategory()"> Add Category</button>
         </form>
     </mat-card>
 </div>
