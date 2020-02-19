@@ -7,6 +7,8 @@ import { pizzaList } from './models/pizzaList';
 import { crustModelList } from './models/crustModelList';
 import { AllOrders } from './models/AllOrders';
 import { Order } from './models/Order';
+import { OrderDetails } from './order';
+import { Price } from './models/Price';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,8 @@ export class DataService {
   private _urlToppings:string = "http://localhost:8082/toppings/getAllToppings";
   private _urlOrder = "http://localhost:8082/order/getAllOrders";
   private _urlcalculatePrice:string = "http://localhost:8082/order/calculatePrice"
-  
+  private _gsturl="http://localhost:8082/tax/getAllTaxFields";
+  public order=[];
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -47,5 +50,17 @@ export class DataService {
   getOrderPrice(GetOrderprice:GetOrderPrice){
     return this.http.post<GetOrderPrice>(this._urlcalculatePrice, GetOrderprice, this.httpOptions);
 
+  }
+  getGST(): Observable<Price[]>{
+    return this.http.get<Price[]>(this._gsturl);
+                    // .catch(this.errorHandler);
+  }
+  placeOrder(Order_obj){
+    
+    return this.http.post<OrderDetails>("http://localhost:8082/order/placeOrder",Order_obj,{
+      headers:new HttpHeaders({
+        'Content-Type':"application/json"
+      })
+    })
   }
 }

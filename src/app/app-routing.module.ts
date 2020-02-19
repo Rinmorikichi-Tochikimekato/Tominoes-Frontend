@@ -7,11 +7,15 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component';
+import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path: 'login', component: LoginComponent},
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'payment',component:OrderDetailsComponent},
+
   {path:'home',component:HomeComponent},
   {
     path:'admin', 

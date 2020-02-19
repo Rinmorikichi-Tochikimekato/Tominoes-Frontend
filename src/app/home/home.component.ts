@@ -8,8 +8,8 @@ import { crustModelList } from '../models/crustModelList';
 import { DataService } from './../data.service';
 import { pizzaList } from '../models/pizzaList';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
+
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -32,8 +32,11 @@ export class HomeComponent implements OnInit {
   
   public tempArr: string[];
   
-  constructor(private _dataService : DataService) {
-   }
+  constructor(private _dataService : DataService,private router: Router
+  ) {
+ 
+  }
+
 
   ngOnInit() {
     this. _dataService.getCategoryData()
@@ -55,29 +58,32 @@ export class HomeComponent implements OnInit {
  }
 
  Add_to_Cart(){
+  alert("Added To Cart");
+
     console.log("cart"); 
     var getOrderprice=new GetOrderPrice();
     
       getOrderprice.pizzaName=this.selectedPizzaName;
       getOrderprice.topings=this.selectedToppings;
       getOrderprice.crustName=this.selectedCrust;
-      //console.log(getOrderprice.crustName);
-      //console.log(getOrderprice.pizzaName)
-      //console.log(getOrderprice.topings)
+      
       console.log(getOrderprice); 
 
       this._dataService.getOrderPrice(getOrderprice).
       subscribe(data4 => this.fetchOrderPrice(data4));
 
-    
+     
+
      
     }
     
 
     fetchOrderPrice(data4)
     {
-      this.order = data4;
-      console.log(this.order);
+      // this.order = data4;
+      this._dataService.order=data4;
+      console.log(this._dataService.order);
+      this.router.navigate(['/payment']);
     }
 
 
@@ -88,6 +94,10 @@ export class HomeComponent implements OnInit {
       this.selectedToppings = this.selectedToppings.filter( topping => { if(option !== topping){return true;}});
       }
       console.log(this.selectedToppings)
+     }
+     Payment_Page()
+     {
+      //  window.location="../";
      }
      
 
