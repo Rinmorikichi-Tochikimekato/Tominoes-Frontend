@@ -1,6 +1,6 @@
 export interface pizzaCategory{
 
     name:string,
-    pizza: string[],
+    pizza:string[],
     price: number
 }
