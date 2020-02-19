@@ -1,10 +1,12 @@
+import { GetOrderPrice } from './models/GetOrderPrice';
 import { ToppingsModelList } from './models/ToppingsModelList';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { pizzaList } from './models/pizzaList';
 import { crustModelList } from './models/crustModelList';
 import { AllOrders } from './models/AllOrders';
+import { Order } from './models/Order';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +16,14 @@ export class DataService {
   private _urlCrust:string = "http://localhost:8082/crust/getAllCrust";
   private _urlToppings:string = "http://localhost:8082/toppings/getAllToppings";
   private _urlOrder = "http://localhost:8082/order/getAllOrders";
+  private _urlcalculatePrice:string = "http://localhost:8082/order/calculatePrice"
+  
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+    
+    })
+  };
   constructor(private http : HttpClient) { }
 
    getCategoryData():Observable<pizzaList>{
@@ -32,6 +42,10 @@ export class DataService {
   getOrdersData() : Observable<AllOrders>{
 
     return this.http.get<AllOrders>(this._urlOrder);
+  }
+  
+  getOrderPrice(GetOrderprice:GetOrderPrice){
+    return this.http.post<GetOrderPrice>(this._urlcalculatePrice, GetOrderprice, this.httpOptions);
 
   }
 }
