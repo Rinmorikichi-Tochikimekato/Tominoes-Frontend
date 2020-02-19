@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -9,7 +10,8 @@ import { AdminToppingComponent } from './admin/admin-topping/admin-topping.compo
 
 
 const routes: Routes = [
-  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path: 'login', component: LoginComponent},
   {path:'home',component:HomeComponent},
   {
     path:'admin', 
@@ -43,4 +45,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent];
+export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent];
