@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToppingsModel } from './models/ToppingsModel';
 import { crustModel } from './models/crustModel';
+import { pizzaCategory } from './models/pizzaCategory';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +10,8 @@ export class AdminPostService {
 
   _urlAddTopping="http://localhost:8082/toppings/addToppings";
   _urlAddCrust="http://localhost:8082/crust/addCrust";
+  _urlAddCategory="http://localhost:8082/category/addCategory";
+
    httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -28,6 +31,10 @@ export class AdminPostService {
     
    }
 
+   addCategory(category:pizzaCategory){
+    return this.http.post<crustModel>(this._urlAddCategory, category,this.httpOptions);
+
+   }
    
 
 
