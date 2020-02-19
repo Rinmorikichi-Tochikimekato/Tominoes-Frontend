@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import {MatToolbarModule, MatIconModule,MatCardModule, MatButtonModule,MatInputModule,MatDividerModule, MatProgressSpinnerModule, MatSidenavModule} from '@angular/material';
+import {MatToolbarModule, MatIconModule,MatPaginatorModule ,MatCardModule, MatButtonModule,MatInputModule,MatDividerModule, MatProgressSpinnerModule, MatSidenavModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import { AdminComponent } from './admin/admin.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
@@ -39,7 +39,8 @@ import { AdminPostService } from './admin-post.service';
     MatTableModule,
     MatDividerModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [AdminPostService],
   bootstrap: [AppComponent]

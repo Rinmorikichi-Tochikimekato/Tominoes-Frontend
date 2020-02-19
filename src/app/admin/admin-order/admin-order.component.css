@@ -2,3 +2,8 @@ table {
     width: 80%;
     margin: auto;
 }
+
+h2 {
+    position: relative;
+    left: 10%;
+}

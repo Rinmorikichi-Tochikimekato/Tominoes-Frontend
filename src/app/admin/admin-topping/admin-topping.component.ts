@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { AdminPostService } from 'src/app/admin-post.service';
 import { ToppingsModel } from 'src/app/models/ToppingsModel';
-
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-admin-topping',
   templateUrl: './admin-topping.component.html',
@@ -17,11 +17,14 @@ export class AdminToppingComponent implements OnInit {
   inputFlag=false;
   topping:ToppingsModel;
   error;
+  dataSource = new MatTableDataSource<ToppingsModel>();
+  @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
+
   constructor(private dataService: DataService, private adminPostService: AdminPostService) { }
 
   ngOnInit() {
-  
-    this.dataService.getToppingsData().subscribe((data)=>this.toppingList=data.list);
+    this.dataSource.paginator = this.paginator;
+    this.dataService.getToppingsData().subscribe((data)=>this.dataSource.data=data.list);
 
   }
 
