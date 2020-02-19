@@ -14,6 +14,10 @@ import { AdminCategoryComponent } from './admin/admin-category/admin-category.co
 import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component'
 import { AdminPostService } from './admin-post.service';
+import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,8 @@ import { AdminPostService } from './admin-post.service';
     AdminOrderComponent,
     AdminCategoryComponent,
     AdminCrustComponent,
-    AdminToppingComponent
+    AdminToppingComponent,
+    OrderDetailsComponent
 
   ],
   imports: [
@@ -40,7 +45,8 @@ import { AdminPostService } from './admin-post.service';
     MatDividerModule,
     MatInputModule,
     MatCardModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [AdminPostService],
   bootstrap: [AppComponent]
