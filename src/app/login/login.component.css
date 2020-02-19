@@ -1,4 +1,6 @@
-
+.tool-bar{
+    display: none;
+}
 .mainDiv{
     height: 100vh;
    
