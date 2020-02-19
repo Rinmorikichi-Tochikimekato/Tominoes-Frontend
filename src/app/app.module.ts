@@ -5,8 +5,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import {MatToolbarModule, MatIconModule,MatPaginatorModule ,MatCardModule, MatButtonModule,MatInputModule,MatDividerModule, MatProgressSpinnerModule, MatSidenavModule, MatMenuModule,MatDialogModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { AdminComponent } from './admin/admin.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
@@ -15,7 +15,9 @@ import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component'
 import { AdminPostService } from './admin-post.service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -47,7 +49,11 @@ import { OrderDetailsComponent } from './Payment/order-details/order-details.com
     MatCardModule,
     MatPaginatorModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [AdminPostService],
   bootstrap: [AppComponent]

@@ -1,47 +1,81 @@
+<div class="row">
 
 
-<div class="form-group">
-   
-    
-    <br>
-
-    <Label for="PIZZA-CAT">Choose a Pizza Category</Label>
-    <select name="PIZZA-CAT" [(ngModel)]="selectedValue"  (change)="onSelect()" class="form-control">
-        <option  *ngFor="let pizza of pizzaCat" [ngValue]="pizza" >{{pizza.name}} </option>
-    </select>
-    
-    
-    <br>
-   
-    <div>
-        <Label for="PIZZA-OPTION">Choose a Pizza </Label>
-    <select id="PIZZA-OPTION" [(ngModel)]="selectedPizzaName" name="PIZZA-OPTION"   class="form-control">
-        <option  *ngFor="let j of selectedValue.pizza"  [ngValue]="j" >{{j}} </option>
-    </select>
-    
+    <div class="column" style="width: 50%;">
+        <br><br><br><br>
+        <br>
+        <img src="../../assets/images/logo.png" alt="" height="90px" style="margin-left: 120px;">
+        <br><br><br><br>
+        <h2 style="width: 100%; text-align: center;">Hi {{user}}, Welcome back!</h2>
     </div>
-    
-    <br>
-   
-    <label for="TOPPINGS">Choose toppings</label>
-    <div name="TOPPINGS" class="checkbox"   *ngFor="let toppings of toppingsList">
-    <label><input type="checkbox"  value="toppings.name" (change)="onChange($event,toppings.name)">{{toppings.name}}</label>
-  </div>
 
-  <br>
+    <div class="column" style="width: 35%;">
+        <h2>Order Now</h2>
+        <mat-card style=" padding: 20px ;">
+            <mat-vertical-stepper>
+                <mat-step [stepControl]="firstFormGroup">
+                    <ng-template matStepLabel>Select Pizza</ng-template>
+                    <form>
+                        <mat-form-field>
+                            <mat-label>Choose a Pizza Category</mat-label>
+                            <mat-select [(ngModel)]="selectedValue" name="PIZZA-CAT" (change)="onSelect()">
+                                <mat-option *ngFor="let pizza of pizzaCat" [value]="pizza">
+                                    {{pizza.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <mat-label>Choose a Pizza</mat-label>
+                            <mat-select name="PIZZA-OPTION" [(ngModel)]="selectedPizzaName">
+                                <mat-option *ngFor="let j of selectedValue.pizza" [value]="j">
+                                    {{j}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
-  <Label for="CRUST "> Choose a Crust :</Label>
-  <select name="CRUST" [(ngModel)]="selectedCrust" class="form-control">
-      <option  *ngFor="let crust of crustList">{{crust.name}} </option>
-  </select>
-  <br>
-    
-  <button type="submit" class="btn btn-primary" (click)="Add_to_Cart()">Add to cart</button>
-  
-  <button type="reset" class="btn btn-primary">Reset</button>
+                    </form>
+                    <button mat-button matStepperNext>Next</button>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup">
+                    <ng-template matStepLabel>Select Crust</ng-template>
+                    <form>
+
+
+                        <mat-form-field>
+                            <mat-label>Choose a Crust</mat-label>
+                            <mat-select name="CRUST" [(ngModel)]="selectedCrust">
+                                <mat-option *ngFor="let crust of crustList" [value]="crust">
+                                    {{crust.name}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </form>
+                    <button mat-button matStepperNext>Next</button>
+                </mat-step>
+
+
+                <mat-step [stepControl]="thirdFormGroup">
+                    <ng-template matStepLabel>Select Toppings</ng-template>
+                    <form>
+
+                        <div name="TOPPINGS" *ngFor="let toppings of toppingsList">
+                            <mat-checkbox value="toppings.name" (change)="onChange($event,toppings.name)">{{toppings.name}}</mat-checkbox>
+                        </div>
+                    </form>
+                    <button mat-button matStepperNext>Next</button>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    <p>You are now done.</p>
+                    <div>
+
+                        <button mat-raised-button color="primary" type="submit" class="btn btn-primary" (click)="Add_to_Cart()">Add to cart</button>
+
+                    </div>
+                </mat-step>
+            </mat-vertical-stepper>
+        </mat-card>
+    </div>
+
 </div>
-
-
-
-
-  
