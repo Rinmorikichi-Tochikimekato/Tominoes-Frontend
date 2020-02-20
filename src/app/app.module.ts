@@ -18,6 +18,7 @@ import { OrderDetailsComponent } from './Payment/order-details/order-details.com
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     AdminCategoryComponent,
     AdminCrustComponent,
     AdminToppingComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    ToolbarComponent
 
   ],
   imports: [
