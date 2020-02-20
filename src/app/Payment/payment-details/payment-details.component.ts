@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from '../../data.service';
+import { Price } from '../../models/Price';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-payment-details',
@@ -7,13 +9,63 @@ import { DataService } from '../../data.service';
   styleUrls: ['./payment-details.component.css']
 })
 export class PaymentDetailsComponent implements OnInit {
-public order;
-  constructor(private _dataService : DataService) {       this.order=this._dataService.order;
-  }
+ public order;
+ public errorMsg;
+ dataSource;
+ displayedColumns=["heading","value"];
+ tax;
 
-  ngOnInit() {
-    this._dataService.placeOrder(this.order).subscribe((data)=>console.log(data));
+ cgst;
+ sgst;
+public gst=[];
+data;
+  constructor(private _dataService : DataService,private router: Router) { }
 
-  }
+  ngOnInit(): void {
+    console.log(this._dataService.bill)
+      this.order=this._dataService.order;
+      // console.log(this.data);
+      this.gst=this._dataService.gst;
+    this.dataSource=  [
+        {
+          heading: "Pizza Name",
+           value :  this._dataService.bill.pizzaName
+         },
+         {
+           heading: "Crust Name",
+            value :  this._dataService.bill.crustName
+          },
+          {
+           heading: "Toppings",
+            value :  this.order.topings
+          },
+          {
+           heading: "Base Price",
+            value :  this._dataService.bill.price.basePrice
+          },
+          {
+           heading: "CGST",
+            value :  this._dataService.bill.price.cgst
+          },
+          {
+           heading: "SGST",
+            value :  this._dataService.bill.price.sgst
+          },
+          {
+           heading: "Total Price",
+            value :  this._dataService.bill.price.totalPrice
+          }
+         
+     
+      ]
+     
+      }
+    //  console.log(this.dataSource);
+   
+ 
+  
+
 
 }
+
+

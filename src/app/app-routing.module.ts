@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,6 +12,8 @@ import { PaymentDetailsComponent } from './Payment/payment-details/payment-detai
 
 
 const routes: Routes = [
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {path: 'login', component: LoginComponent},
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'payment',component:OrderDetailsComponent},
   {path:'lastpage',component:PaymentDetailsComponent},
@@ -48,4 +51,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent];
+export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent];

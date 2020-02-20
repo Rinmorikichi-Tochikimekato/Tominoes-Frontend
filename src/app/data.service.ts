@@ -22,6 +22,7 @@ export class DataService {
   private _urlcalculatePrice:string = "http://localhost:8082/order/calculatePrice"
   private _gsturl="http://localhost:8082/tax/getAllTaxFields";
   public order=[];
+  public bill;
   public gst=[];
   private httpOptions = {
     headers: new HttpHeaders({

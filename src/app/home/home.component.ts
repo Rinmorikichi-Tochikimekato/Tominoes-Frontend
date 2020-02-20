@@ -2,7 +2,7 @@ import { Order } from './../models/Order';
 import { Price } from './../models/Price';
 import { GetOrderPrice } from './../models/GetOrderPrice';
 import { pizzaCategory } from './../models/pizzaCategory';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToppingsModelList } from '../models/ToppingsModelList';
 import { crustModelList } from '../models/crustModelList';
 import { DataService } from './../data.service';
@@ -28,17 +28,28 @@ export class HomeComponent implements OnInit {
   public selectedCrust=null;
   public selectedToppings=[];
   public pizzaName;
-
+  user="Sakshi"
   
   public tempArr: string[];
   
-  constructor(private _dataService : DataService,private router: Router
-  ) {
+  public firstFormGroup: FormGroup;
+  public secondFormGroup: FormGroup;
+  thirdFormGroup: FormsModule;
+
+  constructor(private _dataService : DataService,private router: Router,private _formBuilder: FormBuilder) {
  
   }
 
 
   ngOnInit() {
+
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+
     this. _dataService.getCategoryData()
      .subscribe(data => this.pizzaCat = data.categoryList);
   
@@ -56,7 +67,6 @@ export class HomeComponent implements OnInit {
  onSelect(){
  
  }
-
  Add_to_Cart(){
   alert("Added To Cart");
 
@@ -65,7 +75,7 @@ export class HomeComponent implements OnInit {
     
       getOrderprice.pizzaName=this.selectedPizzaName;
       getOrderprice.topings=this.selectedToppings;
-      getOrderprice.crustName=this.selectedCrust;
+      getOrderprice.crustName=this.selectedCrust.name;
       
       console.log(getOrderprice); 
 
@@ -95,7 +105,7 @@ export class HomeComponent implements OnInit {
 
 
    onChange(event,option){
-     if(event.target.checked){
+     if(event.checked){
        this.selectedToppings.push(option);
      }else{
       this.selectedToppings = this.selectedToppings.filter( topping => { if(option !== topping){return true;}});

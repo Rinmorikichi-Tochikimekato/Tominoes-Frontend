@@ -50,8 +50,7 @@ public gst=[];
   placeOrder(){
    //console.log(this._dataService.gst[0].name);
    
-  //  this._dataService.placeOrder(this.order).subscribe((data)=>console.log(data));
-   this.router.navigate(['/lastpage']);
+   this._dataService.placeOrder(this.order).subscribe((data)=>this.setBill(data));
 
   }
 
@@ -59,6 +58,15 @@ setTax(data){
  
   this.cgst=data[0].rate;
   this.sgst=data[1].rate;
+  
+}
+setBill(data)
+{
+  console.log("hey");
+  this._dataService.bill=data;
+  console.log(this._dataService.bill.pizzaName);
+  this.router.navigate(['/lastpage']);
+
 }
 
 }

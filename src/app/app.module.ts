@@ -5,8 +5,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import {MatToolbarModule, MatIconModule,MatPaginatorModule ,MatCardModule, MatButtonModule,MatInputModule,MatDividerModule, MatProgressSpinnerModule, MatSidenavModule} from '@angular/material';
+import {MatToolbarModule, MatIconModule,MatPaginatorModule ,MatCardModule, MatButtonModule,MatInputModule,MatDividerModule, MatProgressSpinnerModule, MatSidenavModule, MatMenuModule,MatDialogModule, MatStepperModule, MatOptionModule, MatSelectModule, MatCheckboxModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTableModule} from '@angular/material/table';
 import { AdminComponent } from './admin/admin.component';
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
@@ -15,7 +15,6 @@ import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component'
 import { AdminPostService } from './admin-post.service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
 
@@ -29,8 +28,7 @@ import { PaymentDetailsComponent } from './Payment/payment-details/payment-detai
     AdminCrustComponent,
     AdminToppingComponent,
     OrderDetailsComponent,
-    PaymentDetailsComponent
-    
+    PaymentDetailsComponent    
 
   ],
   imports: [
@@ -49,7 +47,13 @@ import { PaymentDetailsComponent } from './Payment/payment-details/payment-detai
     MatInputModule,
     MatCardModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatMenuModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   providers: [AdminPostService],
   bootstrap: [AppComponent]

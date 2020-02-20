@@ -1,0 +1,60 @@
+h2 {
+    position: relative;
+    left: 16%;
+}
+
+table {
+    width: 70%;
+    margin: auto;
+}
+mat-card{
+    position: relative;
+    left: 1000px;
+    width: 70%;
+    margin: auto;
+    height: 10px;
+    /* border-style: dotted; */
+    border:1px solid black;
+}
+mat-paginator {
+    margin: auto;
+    width: 69.9%;
+    
+}
+.gst {
+    width: 70%;
+    margin: auto;
+    /* float: l/eft; */
+}
+.leftDiv {
+    width: 70%;
+    float: left;
+}
+
+.rightDiv {
+    width: 30%;
+    float: right;
+}
+
+mat-form-field {
+    width: 80%;
+    padding: 1%;
+}
+
+input {
+    padding: 1%;
+    font-size: 14px;
+}
+
+mat-card {
+    position: relative;
+    top: 70px;
+    left: -60px;
+    padding: 6%;
+    margin: auto;
+}
+button{
+    position: relative;
+    top: 100px;
+    left: 450px;
+}
