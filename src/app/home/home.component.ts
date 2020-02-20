@@ -1,3 +1,4 @@
+import { LoginComponent } from './../login/login.component';
 import { Order } from './../models/Order';
 import { Price } from './../models/Price';
 import { GetOrderPrice } from './../models/GetOrderPrice';
@@ -28,7 +29,9 @@ export class HomeComponent implements OnInit {
   public selectedCrust=null;
   public selectedToppings=[];
   public pizzaName;
-  user="Sakshi"
+
+  
+  public username: string;
   
   public tempArr: string[];
   
@@ -42,6 +45,8 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this._dataService.messageSource.subscribe(name => this.username = name);
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
