@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { MatTableDataSource, MatPaginator, MatInput } from '@angular/material';
@@ -16,8 +17,7 @@ export class AdminCategoryComponent implements OnInit {
   cname;
   cprice;
   pizzas=["pizza0"];
-  
-  
+
   @ViewChildren('matInput') children;
 
 
@@ -27,7 +27,7 @@ export class AdminCategoryComponent implements OnInit {
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
 
-  constructor(private dataService:DataService , private adminService: AdminPostService) { }
+  constructor(private dataService:DataService , private adminService: AdminPostService, private router: Router) { }
 
   ngOnInit() {
    this.dataSource.paginator = this.paginator;
@@ -45,12 +45,23 @@ export class AdminCategoryComponent implements OnInit {
       pizza : pizzaArr
     }
 
-    this.adminService.addCategory(category).subscribe((data)=>alert("Category added successfully"),(error)=>alert("Some error occoured"));
+    this.adminService.addCategory(category).subscribe((data)=>this.refreshPage(),(error)=>alert("Some error occoured"));
 // console.log(category);
   //  this.children.forEach(element => {
   //    console.log(element.nativeElement.value);
   //  });
+  
+ 
+  
   }
+
+  refreshPage(){
+    console.log("Category Added")
+  //   this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+  //     this.router.navigate(['admin/category']);
+  // }); 
+this.ngOnInit();
+}
 
   addMorePizza(){
     this.pizzas.push("pizza"+this.pizzas.length);

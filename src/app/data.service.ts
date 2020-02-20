@@ -2,7 +2,7 @@ import { GetOrderPrice } from './models/GetOrderPrice';
 import { ToppingsModelList } from './models/ToppingsModelList';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { pizzaList } from './models/pizzaList';
 import { crustModelList } from './models/crustModelList';
 import { AllOrders } from './models/AllOrders';
@@ -30,7 +30,15 @@ export class DataService {
     
     })
   };
+  private userName = new BehaviorSubject<string> ("");
+
+  messageSource = this.userName.asObservable();
+
   constructor(private http : HttpClient) { }
+
+  changeName(message:string){
+    this.userName.next(message);
+  }
 
    getCategoryData():Observable<pizzaList>{
    

@@ -17,6 +17,8 @@ import { AdminPostService } from './admin-post.service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { PaymentDetailsComponent } from './Payment/payment-details/payment-detai
     AdminCrustComponent,
     AdminToppingComponent,
     OrderDetailsComponent,
-    PaymentDetailsComponent    
+    PaymentDetailsComponent,    
+    ToolbarComponent
 
   ],
   imports: [

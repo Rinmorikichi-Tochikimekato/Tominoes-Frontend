@@ -2,10 +2,16 @@
     display: none;
 }
 .mainDiv{
-    height: 100vh;
+    margin-left:650px;
    
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
     
+  }
+  .image{
+    height:40em; background-size:cover; width:auto;
+    background-image:url("./tasty-pepperoni-pizza-black-concrete-background_79782-103.jpg");
+    background-position:50% 50%;
   }
