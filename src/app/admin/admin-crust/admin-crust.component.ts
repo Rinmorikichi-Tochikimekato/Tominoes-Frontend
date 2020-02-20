@@ -30,7 +30,7 @@ export class AdminCrustComponent implements OnInit {
       price:this.cprice
     }
 
-    this.adminPostService.addCrust(crust).subscribe((data)=>alert("Crust inserted successfully"),(error)=>alert("Some error occoured"));
+    this.adminPostService.addCrust(crust).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
 
   }
 

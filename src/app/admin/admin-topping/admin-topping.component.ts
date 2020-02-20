@@ -33,7 +33,7 @@ export class AdminToppingComponent implements OnInit {
      name : this.tname,
      price : this.tprice
    }
-    this.adminPostService.addTopping(this.topping).subscribe((data)=>alert("Inserted successfully"),(error)=>console.log(error));
+    this.adminPostService.addTopping(this.topping).subscribe((data)=>this.ngOnInit(),(error)=>console.log(error));
     this.dataService.getToppingsData().subscribe((data)=>this.toppingList=data.list);
   
   }
