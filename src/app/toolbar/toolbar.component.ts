@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _dataService:DataService) { }
 
   ngOnInit() {
   }
 
+  onclick(){
+    this._dataService.changeName("");
+  }
 }
+
