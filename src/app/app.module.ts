@@ -18,6 +18,7 @@ import { OrderDetailsComponent } from './Payment/order-details/order-details.com
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarLogoutComponent } from './toolbar-logout/toolbar-logout.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AdminToppingComponent,
     OrderDetailsComponent,
     PaymentDetailsComponent,    
-    ToolbarComponent
+    ToolbarComponent, ToolbarLogoutComponent
 
   ],
   imports: [

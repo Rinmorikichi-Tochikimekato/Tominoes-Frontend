@@ -37,7 +37,7 @@ public gst=[];
             value :  this.order.topings
           },
           {
-           heading: "Price",
+           heading: "Base Price",
             value :  this.order.price
           }
          

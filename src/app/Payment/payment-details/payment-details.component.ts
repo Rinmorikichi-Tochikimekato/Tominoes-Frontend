@@ -14,7 +14,7 @@ export class PaymentDetailsComponent implements OnInit {
  dataSource;
  displayedColumns=["heading","value"];
  tax;
-
+id;
  cgst;
  sgst;
 public gst=[];
@@ -25,6 +25,7 @@ data;
     console.log(this._dataService.bill)
       this.order=this._dataService.order;
       // console.log(this.data);
+      // this.id=this._dataService.bill.id;
       this.gst=this._dataService.gst;
     this.dataSource=  [
         {

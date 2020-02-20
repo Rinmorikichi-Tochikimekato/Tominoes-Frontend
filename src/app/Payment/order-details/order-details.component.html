@@ -4,27 +4,23 @@
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="heading">
-      <th mat-header-cell *matHeaderCellDef> Name</th> 
+      <th mat-header-cell *matHeaderCellDef></th> 
       <td mat-cell *matCellDef="let element"> {{element.heading}} </td>
     </ng-container>
   
   <ng-container matColumnDef="value">
-    <th mat-header-cell *matHeaderCellDef> value</th>
+    <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element"> {{element.value}} </td>
   </ng-container>
 
   
 
  
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>  
+  <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>   -->
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+<p class="gst" style="color: red;font-weight: bold">*Base Price is exclusive of gst.CGST is{{cgst}}% and SGST:{{sgst}}%</p>
 
-
-<div class="gst">
-<mat-card>CSGT:{{cgst}}%</mat-card>
-<mat-card>SGST:{{sgst}}%</mat-card>
-</div>
 <ng-container>
 <button class="btn btn-primary"  (click)=placeOrder()>Place Order</button>
 </ng-container>
