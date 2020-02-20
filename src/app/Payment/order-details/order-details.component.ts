@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Price } from '../../models/Price';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-details',
@@ -12,12 +13,16 @@ export class OrderDetailsComponent implements OnInit {
  public errorMsg;
  dataSource;
  displayedColumns=["heading","value"];
-public cgst;
-public sgst;
-  constructor(private _dataService : DataService) { }
+ tax;
+ cgst;
+ sgst;
+public gst=[];
+
+  constructor(private _dataService : DataService,private router: Router) { }
 
   ngOnInit(): void {
       this.order=this._dataService.order;
+      this.gst=this._dataService.gst;
     this.dataSource=  [
         {
           heading: "Pizza Name",
@@ -35,16 +40,26 @@ public sgst;
            heading: "Price",
             value :  this.order.price
           }
+         
      
       ]
      console.log(this.dataSource);
+
+     this._dataService.getGST().subscribe((data)=>this.setTax(data.list),(error)=>console.log(error));
   }
   placeOrder(){
+   //console.log(this._dataService.gst[0].name);
    
-    this._dataService.placeOrder(this.order).subscribe((data)=>console.log(data));
+  //  this._dataService.placeOrder(this.order).subscribe((data)=>console.log(data));
+   this.router.navigate(['/lastpage']);
+
   }
 
-
+setTax(data){
+ 
+  this.cgst=data[0].rate;
+  this.sgst=data[1].rate;
+}
 
 }
 

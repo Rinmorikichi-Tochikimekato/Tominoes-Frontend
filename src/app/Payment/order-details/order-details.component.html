@@ -19,6 +19,12 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>  
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+
+<div class="gst">
+<mat-card>CSGT:{{cgst}}</mat-card>
+<mat-card>SGST:{{sgst}}</mat-card>
+</div>
 <ng-container>
 <button class="btn btn-primary"  (click)=placeOrder()>Place Order</button>
 </ng-container>

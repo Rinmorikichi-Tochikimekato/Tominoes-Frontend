@@ -72,11 +72,18 @@ export class HomeComponent implements OnInit {
       this._dataService.getOrderPrice(getOrderprice).
       subscribe(data4 => this.fetchOrderPrice(data4));
 
-     
+    //  this._dataService.getGST().subscribe(data5 => this.fetchgst(data5.list))
+    // //  this._dataService.getGST().subscribe(data5 => this._dataService.gst=data5)
+    // //  this._dataService.getGST().subscribe();
 
      
     }
-    
+    fetchgst(data)
+    {
+      this._dataService.gst=data;
+     
+      console.log(this._dataService.gst);
+    }
 
     fetchOrderPrice(data4)
     {
@@ -94,7 +101,8 @@ export class HomeComponent implements OnInit {
       this.selectedToppings = this.selectedToppings.filter( topping => { if(option !== topping){return true;}});
       }
       console.log(this.selectedToppings)
-     }
+     
+    }
      Payment_Page()
      {
       //  window.location="../";

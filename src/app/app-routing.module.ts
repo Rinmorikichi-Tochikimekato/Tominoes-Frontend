@@ -7,11 +7,13 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
+import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'payment',component:OrderDetailsComponent},
+  {path:'lastpage',component:PaymentDetailsComponent},
 
   {path:'home',component:HomeComponent},
   {

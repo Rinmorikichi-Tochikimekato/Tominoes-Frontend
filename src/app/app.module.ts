@@ -16,6 +16,7 @@ import { AdminToppingComponent } from './admin/admin-topping/admin-topping.compo
 import { AdminPostService } from './admin-post.service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AdminCategoryComponent,
     AdminCrustComponent,
     AdminToppingComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    PaymentDetailsComponent
+    
 
   ],
   imports: [
