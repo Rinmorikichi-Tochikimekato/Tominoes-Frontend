@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
  
  }
  Add_to_Cart(){
-  alert("Added To Cart");
+  //alert("Added To Cart");
 
     console.log("cart"); 
     var getOrderprice=new GetOrderPrice();

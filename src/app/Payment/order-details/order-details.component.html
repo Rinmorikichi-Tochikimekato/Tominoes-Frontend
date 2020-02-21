@@ -19,7 +19,7 @@
   <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>   -->
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<p class="gst" style="color: red;font-weight: bold">*Base Price is exclusive of gst.CGST is{{cgst}}% and SGST:{{sgst}}%</p>
+<p class="gst" style="color: red;font-weight: bold">*Base Price is exclusive of GST. Additional CGST : {{cgst}}% and SGST : {{sgst}}% would be added in the Bill</p>
 
 <ng-container>
 <button class="btn btn-primary"  (click)=placeOrder()>Place Order</button>

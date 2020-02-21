@@ -41,19 +41,19 @@ data;
             value :  this.order.topings
           },
           {
-           heading: "Base Price",
+           heading: "Base Price ₹",
             value :  this._dataService.bill.price.basePrice
           },
           {
-           heading: "CGST",
+           heading: "CGST ₹",
             value :  this._dataService.bill.price.cgst
           },
           {
-           heading: "SGST",
+           heading: "SGST ₹",
             value :  this._dataService.bill.price.sgst
           },
           {
-           heading: "Total Price",
+           heading: "Total Price ₹",
             value :  this._dataService.bill.price.totalPrice
           }
          
