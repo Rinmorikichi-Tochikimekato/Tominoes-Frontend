@@ -9,6 +9,7 @@ import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
+import { AdminTaxComponent } from './admin/admin-tax/admin-tax.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path:'topping',
         component:AdminToppingComponent
+      },
+      {
+        path:'tax',
+        component:AdminTaxComponent
       }
 
     ]
@@ -51,4 +56,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent];
+export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent,AdminTaxComponent];
