@@ -4,22 +4,23 @@ import { ToppingsModel } from './models/ToppingsModel';
 import { crustModel } from './models/crustModel';
 import { pizzaCategory } from './models/pizzaCategory';
 import { Price } from './models/Price';
+import { UserModel } from './models/UserModel';
 @Injectable({
   providedIn: 'root'
 })
-export class AdminPostService {
+export class AdminService {
 
   _urlAddTopping = "http://localhost:8082/toppings/addToppings";
   _urlAddCrust = "http://localhost:8082/crust/addCrust";
   _urlAddCategory = "http://localhost:8082/category/addCategory";
   _urlAddTax = "http://localhost:8082/tax/addTaxField";
-
+  _urlAddUser = "http://localhost:8082/user/addUser";
 
   _urlDeleteTopping = "http://localhost:8082/toppings/deleteToppingByName";
   _urlDeleteCrust = "http://localhost:8082/crust/deleteCrustByName";
   _urlDeleteCategory = "http://localhost:8082/category/deleteCategoryByName";
   _urlDeleteTax = "http://localhost:8082/tax/deletetaxByName";
-
+  _urlDeleteUser = "http://localhost:8082/user/deleteUserByName";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -51,7 +52,10 @@ export class AdminPostService {
 
   }
 
+  addUser(user: UserModel) {
+    return this.http.post<UserModel>(this._urlAddUser, user, this.httpOptions);
 
+  }
 
 
 
@@ -112,6 +116,23 @@ export class AdminPostService {
 
 
     return this.http.delete(this._urlDeleteTax, options);
+
+
+  }
+
+  
+  deleteUser(user: UserModel) {
+
+console.log(user);
+
+    let options = {
+      headers: this.httpOptions.headers,
+      body: {name:user.username}
+    };
+
+
+
+    return this.http.delete(this._urlDeleteUser, options);
 
 
   }

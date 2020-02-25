@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/
 import { DataService } from 'src/app/data.service';
 import { MatTableDataSource, MatPaginator, MatInput } from '@angular/material';
 import { pizzaCategory } from 'src/app/models/pizzaCategory';
-import { AdminPostService } from 'src/app/admin-service';
+import { AdminService } from 'src/app/admin-service';
 
 @Component({
   selector: 'app-admin-category',
@@ -27,7 +27,7 @@ export class AdminCategoryComponent implements OnInit {
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
 
-  constructor(private dataService:DataService , private adminService: AdminPostService, private router: Router) { }
+  constructor(private dataService:DataService , private adminService: AdminService) { }
 
   ngOnInit() {
    this.dataSource.paginator = this.paginator;

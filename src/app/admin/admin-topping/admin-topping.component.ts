@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/data.service';
-import { AdminPostService } from 'src/app/admin-service';
+import { AdminService } from 'src/app/admin-service';
 import { ToppingsModel } from 'src/app/models/ToppingsModel';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 @Component({
@@ -20,7 +20,7 @@ export class AdminToppingComponent implements OnInit {
   dataSource = new MatTableDataSource<ToppingsModel>();
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
-  constructor(private dataService: DataService, private adminService: AdminPostService) { }
+  constructor(private dataService: DataService, private adminService: AdminService) { }
 
   ngOnInit() {
     this.dataSource.paginator = this.paginator;

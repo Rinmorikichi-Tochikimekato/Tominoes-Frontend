@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { DataService } from 'src/app/data.service';
-import { AdminPostService } from 'src/app/admin-service';
+import { AdminService } from 'src/app/admin-service';
 import { Price } from 'src/app/models/Price';
 
 @Component({
@@ -17,7 +17,7 @@ export class AdminTaxComponent implements OnInit {
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
 
-  constructor(private dataService : DataService,private adminService:AdminPostService) { 
+  constructor(private dataService : DataService,private adminService:AdminService) { 
    
   }
 

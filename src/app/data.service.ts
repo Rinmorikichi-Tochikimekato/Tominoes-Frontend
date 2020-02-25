@@ -10,6 +10,8 @@ import { Order } from './models/Order';
 import { OrderDetails } from './order';
 import { Price } from './models/Price';
 import { PriceList } from './models/PriceList';
+import { UserModel } from './models/UserModel';
+import { UserList } from './models/UserList';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,7 @@ export class DataService {
   private _urlOrder = "http://localhost:8082/order/getAllOrders";
   private _urlcalculatePrice:string = "http://localhost:8082/order/calculatePrice"
   private _gsturl="http://localhost:8082/tax/getAllTaxFields";
+  private _userurl="http://localhost:8082/user/getAllUsers";
   public order=[];
   public bill;
   public gst=[];
@@ -66,6 +69,12 @@ export class DataService {
     return this.http.get<PriceList>(this._gsturl);
                     // .catch(this.errorHandler);
   }
+
+  getUserData():Observable<UserList>{
+    return this.http.get<UserList>(this._userurl);
+
+  }
+
   placeOrder(Order_obj){
     
     return this.http.post<OrderDetails>("http://localhost:8082/order/placeOrder",Order_obj,{
