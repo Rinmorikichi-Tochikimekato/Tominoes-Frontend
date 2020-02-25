@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/
 import { DataService } from 'src/app/data.service';
 import { MatTableDataSource, MatPaginator, MatInput } from '@angular/material';
 import { pizzaCategory } from 'src/app/models/pizzaCategory';
-import { AdminPostService } from 'src/app/admin-post.service';
+import { AdminPostService } from 'src/app/admin-service';
 
 @Component({
   selector: 'app-admin-category',
@@ -13,7 +13,7 @@ import { AdminPostService } from 'src/app/admin-post.service';
 export class AdminCategoryComponent implements OnInit {
 
   categoryList;
-  displayedColumns = ['name','pizza','price'];
+  displayedColumns = ['name','pizza','price','actions'];
   cname;
   cprice;
   pizzas=["pizza0"];
@@ -73,6 +73,13 @@ this.ngOnInit();
 
  
     
+  }
+
+  deleteCategory(element){
+
+  
+    
+   this.adminService.deleteCategory(element).subscribe((data)=>this.refreshPage(),(error)=>alert("Some error occoured"));
   }
 
 }

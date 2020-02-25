@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { DataService } from 'src/app/data.service';
-import { AdminPostService } from 'src/app/admin-post.service';
+import { AdminPostService } from 'src/app/admin-service';
 import { Price } from 'src/app/models/Price';
 
 @Component({
@@ -12,12 +12,12 @@ import { Price } from 'src/app/models/Price';
 export class AdminTaxComponent implements OnInit {
   tname;
   trate;
-  displayedColumns = ['name','rate'];
+  displayedColumns = ['name','rate','actions'];
   dataSource = new MatTableDataSource<Price>();
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
 
-  constructor(private dataService : DataService,private adminPostService:AdminPostService) { 
+  constructor(private dataService : DataService,private adminService:AdminPostService) { 
    
   }
 
@@ -32,10 +32,17 @@ export class AdminTaxComponent implements OnInit {
       rate:this.trate
     }
 
+  
+
     console.log(tax);
-  this.adminPostService.addTax(tax).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
+  this.adminService.addTax(tax).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
 
   }
 
+  deleteTax(element){
+      
+    this.adminService.deleteTax(element).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
 
+
+  }
 }

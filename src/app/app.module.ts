@@ -13,7 +13,7 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component'
-import { AdminPostService } from './admin-post.service';
+import { AdminPostService } from './admin-service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
