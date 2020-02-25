@@ -28,7 +28,11 @@ data;
       // this.id=this._dataService.bill.id;
       this.gst=this._dataService.gst;
     this.dataSource=  [
-        {
+      {
+        heading: "Date",
+         value :  this._dataService.bill.date
+       },  
+      {
           heading: "Pizza Name",
            value :  this._dataService.bill.pizzaName
          },
