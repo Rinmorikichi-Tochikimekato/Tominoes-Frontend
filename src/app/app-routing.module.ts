@@ -10,40 +10,47 @@ import { AdminToppingComponent } from './admin/admin-topping/admin-topping.compo
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 import { AdminTaxComponent } from './admin/admin-tax/admin-tax.component';
+import { AdminUserComponent } from './admin/admin-user/admin-user.component';
 
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path: 'login', component: LoginComponent},
-  {path:'',redirectTo:'home',pathMatch:'full'},
-  {path:'payment',component:OrderDetailsComponent},
-  {path:'lastpage',component:PaymentDetailsComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'payment', component: OrderDetailsComponent },
+  { path: 'lastpage', component: PaymentDetailsComponent },
 
-  {path:'home',component:HomeComponent},
+  { path: 'home', component: HomeComponent },
   {
-    path:'admin', 
-    component:AdminComponent,
+    path: 'admin',
+    component: AdminComponent,
     children: [
       {
-        path:'order',
-        component:AdminOrderComponent
+        path: 'order',
+        component: AdminOrderComponent
       },
       {
-        path:'category',
-        component:AdminCategoryComponent
+        path: 'category',
+        component: AdminCategoryComponent
       },
       {
-        path:'crust',
-        component:AdminCrustComponent
+        path: 'crust',
+        component: AdminCrustComponent
       },
       {
-        path:'topping',
-        component:AdminToppingComponent
+        path: 'topping',
+        component: AdminToppingComponent
       },
       {
-        path:'tax',
-        component:AdminTaxComponent
+        path: 'tax',
+        component: AdminTaxComponent
+      },
+      {
+        path: 'user',
+        component: AdminUserComponent
       }
+
+
 
     ]
   }
@@ -56,4 +63,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents = [HomeComponent, AdminComponent , AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent,AdminTaxComponent];
+export const routingComponents = [HomeComponent, AdminComponent, AdminCategoryComponent, AdminOrderComponent, AdminCrustComponent, AdminToppingComponent, LoginComponent, AdminTaxComponent, AdminUserComponent];

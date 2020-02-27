@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
 import { crustModel } from 'src/app/models/crustModel';
-import { AdminPostService } from 'src/app/admin-service';
+import { AdminService } from 'src/app/admin-service';
 
 @Component({
   selector: 'app-admin-crust',
@@ -17,7 +17,7 @@ export class AdminCrustComponent implements OnInit {
   dataSource = new MatTableDataSource<crustModel>();
   @ViewChild(MatPaginator,{static:true}) paginator: MatPaginator;
 
-  constructor(private dataService : DataService,private adminService:AdminPostService) { }
+  constructor(private dataService : DataService,private adminService:AdminService) { }
 
   ngOnInit() {
       this.dataService.getCrustData().subscribe((data)=>this.dataSource.data=data.list);

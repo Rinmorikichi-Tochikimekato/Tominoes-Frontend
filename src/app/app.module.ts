@@ -13,13 +13,14 @@ import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminCrustComponent } from './admin/admin-crust/admin-crust.component';
 import { AdminToppingComponent } from './admin/admin-topping/admin-topping.component'
-import { AdminPostService } from './admin-service';
+import { AdminService } from './admin-service';
 import { OrderDetailsComponent } from './Payment/order-details/order-details.component';
 import { PaymentDetailsComponent } from './Payment/payment-details/payment-details.component';
 
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarLogoutComponent } from './toolbar-logout/toolbar-logout.component';
 import { AdminTaxComponent } from './admin/admin-tax/admin-tax.component';
+import { AdminUserComponent } from './admin/admin-user/admin-user.component';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { AdminTaxComponent } from './admin/admin-tax/admin-tax.component';
     AdminToppingComponent,
     OrderDetailsComponent,
     PaymentDetailsComponent,    
-    ToolbarComponent, ToolbarLogoutComponent, AdminTaxComponent
+    ToolbarComponent, ToolbarLogoutComponent, AdminTaxComponent, AdminUserComponent
 
   ],
   imports: [
@@ -60,7 +61,7 @@ import { AdminTaxComponent } from './admin/admin-tax/admin-tax.component';
     MatSelectModule,
     MatCheckboxModule
   ],
-  providers: [AdminPostService],
+  providers: [AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
