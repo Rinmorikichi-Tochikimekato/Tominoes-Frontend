@@ -29,6 +29,10 @@ data;
       this.gst=this._dataService.gst;
     this.dataSource=  [
       {
+        heading: "Order id",
+         value :  this._dataService.bill.id
+       },
+      {
         heading: "Date",
          value :  this._dataService.bill.date
        },  
