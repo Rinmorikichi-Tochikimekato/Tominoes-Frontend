@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./payment-details.component.css']
 })
 export class PaymentDetailsComponent implements OnInit {
- public order;
+  public order;
  public errorMsg;
  dataSource;
  displayedColumns=["heading","value"];
@@ -27,7 +27,12 @@ data;
       // console.log(this.data);
       // this.id=this._dataService.bill.id;
       this.gst=this._dataService.gst;
+      
     this.dataSource=  [
+      {
+        heading: "User Id",
+         value :  sessionStorage.getItem("id")
+       },
       {
         heading: "Order id",
          value :  this._dataService.bill.id

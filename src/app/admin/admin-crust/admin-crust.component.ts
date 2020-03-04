@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { DataService } from '../../data.service';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { crustModel } from 'src/app/models/crustModel';
-import { AdminService } from 'src/app/admin-service';
+import { crustModel } from '../../models/crustModel';
+import { AdminService } from '../../admin-service';
 
 @Component({
   selector: 'app-admin-crust',

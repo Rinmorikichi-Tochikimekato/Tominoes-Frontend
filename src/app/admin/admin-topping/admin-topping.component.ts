@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataService } from 'src/app/data.service';
-import { AdminService } from 'src/app/admin-service';
-import { ToppingsModel } from 'src/app/models/ToppingsModel';
+import { DataService } from '../../data.service';
+import { AdminService } from '../../admin-service';
+import { ToppingsModel } from '../../models/ToppingsModel';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 @Component({
   selector: 'app-admin-topping',

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UserModel } from 'src/app/models/UserModel';
+import { UserModel } from '../../models/UserModel';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { DataService } from 'src/app/data.service';
-import { AdminService } from 'src/app/admin-service';
+import { DataService } from '../../data.service';
+import { AdminService } from '../../admin-service';
 
 @Component({
   selector: 'app-admin-user',

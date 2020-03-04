@@ -15,7 +15,6 @@ export class AdminService {
   _urlAddCategory = "http://localhost:8082/category/addCategory";
   _urlAddTax = "http://localhost:8082/tax/addTaxField";
   _urlAddUser = "http://localhost:8082/user/addUser";
-
   _urlDeleteTopping = "http://localhost:8082/toppings/deleteToppingByName";
   _urlDeleteCrust = "http://localhost:8082/crust/deleteCrustByName";
   _urlDeleteCategory = "http://localhost:8082/category/deleteCategoryByName";
@@ -56,7 +55,7 @@ export class AdminService {
     return this.http.post<UserModel>(this._urlAddUser, user, this.httpOptions);
 
   }
-
+  
 
 
   deleteTopping(topping: ToppingsModel) {

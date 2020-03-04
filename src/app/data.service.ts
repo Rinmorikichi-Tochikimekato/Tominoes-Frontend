@@ -12,6 +12,7 @@ import { Price } from './models/Price';
 import { PriceList } from './models/PriceList';
 import { UserModel } from './models/UserModel';
 import { UserList } from './models/UserList';
+import { User } from './models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,8 @@ export class DataService {
   private _urlcalculatePrice:string = "http://localhost:8082/order/calculatePrice"
   private _gsturl="http://localhost:8082/tax/getAllTaxFields";
   private _userurl="http://localhost:8082/user/getAllUsers";
+  private _urlgetUser = "http://localhost:8082/user/getUserByName";
+
   public order=[];
   public bill;
   public gst=[];
@@ -72,6 +75,12 @@ export class DataService {
 
   getUserData():Observable<UserList>{
     return this.http.get<UserList>(this._userurl);
+
+  }
+
+  getUserId(user:User){
+    
+    return this.http.post<number>(this._urlgetUser,user,this.httpOptions);
 
   }
 

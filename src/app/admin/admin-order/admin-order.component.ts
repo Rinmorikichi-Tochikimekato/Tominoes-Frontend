@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/app/models/Order';
-import { DataService } from 'src/app/data.service';
+import { Order } from '../../models/Order';
+import { DataService } from '../../data.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 @Component({

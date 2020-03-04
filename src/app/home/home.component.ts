@@ -1,12 +1,12 @@
-import { LoginComponent } from './../login/login.component';
-import { Order } from './../models/Order';
-import { Price } from './../models/Price';
-import { GetOrderPrice } from './../models/GetOrderPrice';
-import { pizzaCategory } from './../models/pizzaCategory';
+import { LoginComponent } from '../login/login.component';
+import { Order } from '../models/Order';
+import { Price } from '../models/Price';
+import { GetOrderPrice } from '../models/GetOrderPrice';
+import { pizzaCategory } from '../models/pizzaCategory';
 import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToppingsModelList } from '../models/ToppingsModelList';
 import { crustModelList } from '../models/crustModelList';
-import { DataService } from './../data.service';
+import { DataService } from '../data.service';
 import { pizzaList } from '../models/pizzaList';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
 

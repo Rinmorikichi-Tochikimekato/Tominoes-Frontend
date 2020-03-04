@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { DataService } from '../../data.service';
 import { MatTableDataSource, MatPaginator, MatInput } from '@angular/material';
-import { pizzaCategory } from 'src/app/models/pizzaCategory';
-import { AdminService } from 'src/app/admin-service';
+import { pizzaCategory } from '../../models/pizzaCategory';
+import { AdminService } from '../../admin-service';
 
 @Component({
   selector: 'app-admin-category',

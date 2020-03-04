@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { DataService } from 'src/app/data.service';
-import { AdminService } from 'src/app/admin-service';
-import { Price } from 'src/app/models/Price';
+import { DataService } from '../../data.service';
+import { AdminService } from '../../admin-service';
+import { Price } from '../../models/Price';
 
 @Component({
   selector: 'app-admin-tax',
