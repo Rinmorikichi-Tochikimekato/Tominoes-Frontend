@@ -35,7 +35,8 @@ export class AdminUserComponent implements OnInit {
       password: this.password
     }
     this.adminService.addUser(this.user).subscribe((data) => this.ngOnInit(), (error) => console.log(error));
- 
+    this.username=""
+    this.password=""
   }
 
   deleteUser(user){

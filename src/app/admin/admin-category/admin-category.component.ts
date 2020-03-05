@@ -51,7 +51,9 @@ export class AdminCategoryComponent implements OnInit {
   //    console.log(element.nativeElement.value);
   //  });
   
- 
+    this.cname=""
+    this.cprice=""
+    this.pizzas=[]
   
   }
 

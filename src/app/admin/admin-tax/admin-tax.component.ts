@@ -36,7 +36,8 @@ export class AdminTaxComponent implements OnInit {
 
     console.log(tax);
   this.adminService.addTax(tax).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
-
+    this.tname=""
+    this.trate=""
   }
 
   deleteTax(element){

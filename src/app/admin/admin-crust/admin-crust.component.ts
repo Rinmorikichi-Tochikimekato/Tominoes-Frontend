@@ -31,7 +31,8 @@ export class AdminCrustComponent implements OnInit {
     }
 
     this.adminService.addCrust(crust).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));
-
+    this.cname=""
+    this.cprice=""
   }
   deleteCrust(element){
     this.adminService.deleteCrust(element).subscribe((data)=>this.ngOnInit(),(error)=>alert("Some error occoured"));

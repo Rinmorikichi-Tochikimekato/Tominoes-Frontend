@@ -35,6 +35,9 @@ export class AdminToppingComponent implements OnInit {
    }
     this.adminService.addTopping(this.topping).subscribe((data)=>this.ngOnInit(),(error)=>console.log(error));
     this.dataService.getToppingsData().subscribe((data)=>this.toppingList=data.list);
+    this.tprice=""
+    this.tname=""
+
   
   }
 
