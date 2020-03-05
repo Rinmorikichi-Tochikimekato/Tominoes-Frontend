@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AdminOrderComponent implements OnInit {
 
   orderList;
-  displayedColumns: string[] = ['id','pizzaName', 'crustName','topings','price'];
+  displayedColumns: string[] = ['id','userid','date','pizzaName', 'crustName','topings','price'];
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
