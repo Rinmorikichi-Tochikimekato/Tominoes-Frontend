@@ -1,3 +1,4 @@
+import { UserModel } from './../models/UserModel';
 import { DataService } from '../data.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
@@ -12,46 +13,46 @@ import { HttpHeaders,HttpClient } from '../../../node_modules/@angular/common/ht
 })
 export class LoginComponent implements OnInit {
   constructor(private _dataService : DataService,private router: Router) { }
+
 public username: string;
 password: string;
 id:number;
- user :User;
-
-
+ validateuser : UserModel;
+ nameClass:User;
 
   ngOnInit() {
-    this._dataService.messageSource.subscribe(name => this.username = name);
- 
-  
+
   }
  
 
   login() : void {
-    this._dataService.changeName(this.username);
-    console.log(this.username);
-    
-       let user:User = {
-         name:this.username
-       }
-       console.log("sending object "+ user.name);
-     this._dataService.getUserId(user).subscribe((data)=>this.abc(data));
+  
+     this.nameClass = {
+      name:this.username
+    }
 
-    
-    if(this.username == 'admin' && this.password == 'admin'){
-     this.router.navigate(["admin"]);
-    }else if(this.username == "user1" && this.password == "user1"){
-      this.router.navigate(["home"]);
-    }
-    else {
-      alert("Invalid credentials");
-    }
-   
+     this._dataService.getUserObject(this.nameClass).subscribe((data)=> this.loginValidate(data),(error)=>alert("error"));
     
   }
-  abc(data){
-    sessionStorage.setItem("id",data);
+ 
+  loginValidate(data){
+    this.validateuser = data;
+    console.log(this.validateuser.username);
+    if(this.username == "admin"  && this.password == "admin"){
+      this.router.navigate(["admin"]);
+     }else if(this.username == this.validateuser.username && this.password == this.validateuser.password){
+      
+      sessionStorage.setItem("id",this.validateuser.userId);
+      sessionStorage.setItem("name",this.validateuser.username);
+      
+       this.router.navigate(["home"]);
+     }
+     else {
+       alert("Invalid credentials");
+     }
 
   }
+
   
 
  

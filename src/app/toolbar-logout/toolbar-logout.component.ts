@@ -12,8 +12,6 @@ export class ToolbarLogoutComponent implements OnInit {
 
   ngOnInit() {
   }
-  onclick(){
-    this._dataService.changeName("");
-  }
+ 
 
 }

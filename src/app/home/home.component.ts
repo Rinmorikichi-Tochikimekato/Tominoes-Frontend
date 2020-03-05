@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   public pizzaName;
 
   
-  public username: string;
+  public username = sessionStorage.getItem("name");;
   
   public tempArr: string[];
   
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this._dataService.messageSource.subscribe(name => this.username = name);
+    //this._dataService.messageSource.subscribe(name => this.username = name);
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

@@ -26,6 +26,7 @@ export class DataService {
   private _gsturl="http://localhost:8082/tax/getAllTaxFields";
   private _userurl="http://localhost:8082/user/getAllUsers";
   private _urlgetUser = "http://localhost:8082/user/getUserByName";
+  private _urlgetUserObject = "http://localhost:8082/user/getUserObjectByName";
 
   public order=[];
   public bill;
@@ -36,15 +37,9 @@ export class DataService {
     
     })
   };
-  private userName = new BehaviorSubject<string> ("");
-
-  messageSource = this.userName.asObservable();
 
   constructor(private http : HttpClient) { }
 
-  changeName(message:string){
-    this.userName.next(message);
-  }
 
    getCategoryData():Observable<pizzaList>{
    
@@ -78,10 +73,9 @@ export class DataService {
 
   }
 
-  getUserId(user:User){
-    
-    return this.http.post<number>(this._urlgetUser,user,this.httpOptions);
-
+  
+  getUserObject(user:User){
+    return this.http.post<UserModel>(this._urlgetUserObject,user,this.httpOptions);
   }
 
   placeOrder(Order_obj){

@@ -13,8 +13,6 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onclick(){
-    this._dataService.changeName("");
-  }
+  
 }
 
