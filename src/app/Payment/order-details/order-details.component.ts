@@ -49,7 +49,7 @@ public gst=[];
   }
   placeOrder(){
    //console.log(this._dataService.gst[0].name);
-   
+   this.order.userid=sessionStorage.getItem("id");
    this._dataService.placeOrder(this.order).subscribe((data)=>this.setBill(data));
 
   }
